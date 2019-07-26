@@ -1,0 +1,6 @@
+framework module Pods_LennonWallHKUITests {
+  umbrella header "Pods-LennonWallHKUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
