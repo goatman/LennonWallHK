@@ -11,7 +11,9 @@ About this project
 This is an open source project dedicated to Hong Kong citizens against the tyranny of hk government during the anti-extradition bill protest. You are welcome the download the source code and create your own Lennon Wall app.
 
 Pod used:
-\nOnboardkit
-\nPDColorPicker
+
+Onboardkit
+
+PDColorPicker
 
 Email: lennonwall.hk.ar@gmail.com
