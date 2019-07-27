@@ -1,20 +1,20 @@
 PODS:
-  - CTHelp (0.4.0)
-  - PDColorPicker (0.8.2)
+  - OnboardKit (1.4.2)
+  - PDColorPicker (0.8.3)
 
 DEPENDENCIES:
-  - CTHelp
+  - OnboardKit
   - PDColorPicker
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
-    - CTHelp
+    - OnboardKit
     - PDColorPicker
 
 SPEC CHECKSUMS:
-  CTHelp: 9b6cac769bc805ae559b235f0150c0b1eec27cdf
-  PDColorPicker: 63f25f6477e7a0dcd233d4592f08190349d6e53e
+  OnboardKit: 38aedb98149aefe76911d6492a3f1d89cfa41876
+  PDColorPicker: 3c9857bb942e2878c150fc890b91fc08f1457967
 
-PODFILE CHECKSUM: 9e677fa0f4324144819f4fd58920e1bc9bd18e8a
+PODFILE CHECKSUM: b7d2e2a2719b0657388d8ab4dec674bf7760524a
 
 COCOAPODS: 1.7.1

@@ -27,6 +27,7 @@ class ARSettingViewController: UIViewController, Dimmable {
     @IBOutlet weak var segmentedPaperSize: UISegmentedControl!
     @IBOutlet weak var segmentedPaperColor: UISegmentedControl!
     @IBOutlet weak var buttonPaperColor: UIButton!
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -56,6 +57,7 @@ class ARSettingViewController: UIViewController, Dimmable {
         choosePaperColor()
     }
     
+
     @IBAction func onResetTouchDown(_ sender: Any) {
         boolResetScene = true
         arsvcDelegate.settingsViewControllerFinished(self)
@@ -65,7 +67,7 @@ class ARSettingViewController: UIViewController, Dimmable {
     func choosePaperColor(){
         let current = self.paperColor
         
-        let colorPicker = PDColorPickerViewController(initialColor: current, tintColor: .blue) {
+        let colorPicker = PDColorPickerViewController(initialColor: current, tintColor: .black) {
             [weak self] newColor in
             // Un-dim the view once the color picker is dismissed
             self?.undim()

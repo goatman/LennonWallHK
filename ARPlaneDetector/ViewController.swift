@@ -10,7 +10,7 @@ import UIKit
 import SceneKit
 import ARKit
 import ARVideoKit
-import CTHelp
+import OnboardKit
 
 class ViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate, DrawViewControllerDelegate {
     
@@ -62,6 +62,32 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
     var boolResetScene : Bool = false
     
     var currentMode = ARWallMode.Ramdon
+    
+    lazy var onboardingPages: [OnboardPage] = {
+        let pageOne = OnboardPage(title: "Create AR Lennon Wall.",
+                                  imageName: "hand_smartphone-17-512",
+                                  description: "1. Hold your phone, scan the walls around you.")
+        
+        let pageTwo = OnboardPage(title: "Yellow Grid appears",
+                                  imageName: "helpgrid",
+                                  description: "2. Walls are detected as yellow grids.")
+        
+        let pageThree = OnboardPage(title: "Tap on the Grid",
+                                    imageName: "hand_smartphone-18-512",
+                                    description: "3. Tap on the gird to paste memos. \nYou are making a Lennon Wall!")
+        
+        let pageFour = OnboardPage(title: "Mode of memo source",
+                                   imageName: "helpslide4",
+                                   description: "Tap the icons to switch between these modes.\nDefault mode is PRESET."
+        )
+        
+        let pageFive = OnboardPage(title: "More buttons.....",
+                                   imageName: "helpslide5",
+                                   description: "You are ready to make Lennon Wall EVERYWHERE.",
+                                   advanceButtonTitle: "Done")
+        
+        return [pageOne, pageTwo, pageThree, pageFour, pageFive]
+    }()
     
     func textChanged(image: UIImage?) {
         myImage = image
@@ -126,6 +152,10 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
         super.viewWillAppear(animated)
         
        recorder?.prepare(sceneManager.configuration)
+        
+        if (!isAppAlreadyLaunchedOnce()){
+            showHelp()
+        }
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -201,7 +231,13 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
         }
         else
         {
-            box.firstMaterial?.diffuse.contents = imageByComposing(image: myImage! ,over: colorArray.randomElement()!)
+            if (paperColorMode == 0)
+            {
+                box.firstMaterial?.diffuse.contents = imageByComposing(image: myImage! ,over: colorArray.randomElement()!)
+            }else{
+                box.firstMaterial?.diffuse.contents = imageByComposing(image: myImage! ,over: paperColor)
+            }
+            
         }
         //box.firstMaterial?.diffuse.contents = colorArray.randomElement()
         
@@ -320,7 +356,6 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
             //      sender.setTitle("Record", for: .normal)
             //      sender.setTitleColor(.black, for: .normal)
             
-            
         }
         }
     }
@@ -391,11 +426,31 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
     }
     
     @IBAction func onHelpTouchDown(_ sender: Any) {
-        showCTHelp() 
+
+        showHelp()
     }
     
     @IBAction func tappedPhoto(_ sender: Any) {
 
+    }
+    
+    func showHelp()
+    {
+        let tintColor = UIColor(red: 1.00, green: 0.52, blue: 0.40, alpha: 1.00)
+        let titleColor = UIColor(red: 1.00, green: 0.35, blue: 0.43, alpha: 1.00)
+        let boldTitleFont = UIFont.systemFont(ofSize: 18.0, weight: .bold)
+        let mediumTextFont = UIFont.systemFont(ofSize: 16.0, weight: .semibold)
+        let appearanceConfiguration = OnboardViewController.AppearanceConfiguration(tintColor: tintColor,
+                                                                                    titleColor: titleColor,
+                                                                                    textColor: .black,
+                                                                                    backgroundColor: .white,
+                                                                                    imageContentMode: .scaleAspectFit,
+                                                                                    titleFont: boldTitleFont,
+                                                                                    textFont: mediumTextFont)
+        let onboardingVC = OnboardViewController(pageItems: onboardingPages,
+                                                 appearanceConfiguration: appearanceConfiguration)
+        onboardingVC.modalPresentationStyle = .formSheet
+        onboardingVC.presentFrom(self, animated: true)
     }
     
     func setMyImage(image: UIImage)
@@ -474,50 +529,18 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
         picker.dismiss(animated: true, completion: nil)
     }
     
-    func showCTHelp() {
-        let ctHelp = CTHelp()
-        
-        // Optional values to set colors
-        // ctHelp.ctBgViewColor = .white
-        // ctHelp.ctTitleColor = .darkText
-        // ctHelp.ctHelpTextColor = .darkGray
-        // ctHelp.ctActionButtonBGColor = UIColor(red: 28/255, green: 136/255, blue: 197.255, alpha: 1)
-        // ctHelp.ctActionButtonTextColor = .white
-        
-        ctHelp.new(CTHelpItem(title:"No Text-Image Only",
-                              helpText: "",
-                              imageName:"SomeFullSizedImage"))
-        ctHelp.new(CTHelpItem(title:"Text and Image",
-                              helpText: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-                              imageName:"SomeSmallImage"))
-        ctHelp.new(CTHelpItem(title:"No Image-Text Only",
-                              helpText: "Eu tempor suscipit dis sed. Tortor velit orci bibendum mattis non metus ornare consequat. Condimentum habitasse dictumst eros nibh rhoncus non pulvinar fermentum. Maecenas convallis gravida facilisis. Interdum, conubia lacinia magnis duis nec quisque.Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-                              imageName:""))
-        
-        // Optional addition of two default cards
-        // Use only if you wish to change the strings presented in the two default cards
-        // ctHelp.ctWebButtonTitle = ""
-        // ctHelp.ctWebHelpText = ""
-        // ctHelp.ctContactTitle = ""
-        // ctHelp.ctContactHelpText = ""
-        // ctHelp.ctIncludeDataText = ""
-        // ctHelp.ctContactButtonTitle = ""
-        
-        // Email data
-        // ctHelp.ctEmailSubject = ""
-        // ctHelp.ctEmailAttachNote = ""
-        // ctHelp.ctEmailBody = ""
-        
-        // Email alert
-        // ctHelp.ctDataAlertTitle = ""
-        // ctHelp.ctDataAlertMessage = ""
-        // ctHelp.ctDataAlertActionNo = ""
-        // ctHelp.ctDataAlertActionYes = ""
-        
-        ctHelp.appendDefaults(companyName: "Your Company Name", emailAddress: "yourContactEmail@somewhere.com", data: nil, webSite: "https://www.yourWebsite.com", companyImageName: "CompanyLogo")
-        
-        ctHelp.presentHelp(from: self)
+    func isAppAlreadyLaunchedOnce()->Bool{
+        let defaults = UserDefaults.standard
+        if let _ = defaults.string(forKey: "isAppAlreadyLaunchedOnce"){
+            //print("App already launched")
+            return true
+        }else{
+            defaults.set(true, forKey: "isAppAlreadyLaunchedOnce")
+            //print("App launched first time")
+            return false
+        }
     }
+    
 }
 
 extension UIButton {

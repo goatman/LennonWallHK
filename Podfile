@@ -7,8 +7,8 @@ target 'LennonWallHK' do
 
   # Pods for LennonWallHK
 
-  pod 'CTHelp'
   pod 'PDColorPicker'
+  pod 'OnboardKit'
 
   target 'LennonWallHKTests' do
     inherit! :search_paths

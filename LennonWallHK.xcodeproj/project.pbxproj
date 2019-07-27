@@ -24,6 +24,7 @@
 		B19A9FCB22DB92CA002A308E /* DrawViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B19A9FCA22DB92CA002A308E /* DrawViewController.swift */; };
 		B19A9FCD22DB94BE002A308E /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B19A9FCC22DB94BE002A308E /* SettingsViewController.swift */; };
 		B19A9FCF22DB94F8002A308E /* Pencil.swift in Sources */ = {isa = PBXBuildFile; fileRef = B19A9FCE22DB94F8002A308E /* Pencil.swift */; };
+		B19FAF3222EC9AC80097B755 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B19FAF3122EC9AC80097B755 /* AboutViewController.swift */; };
 		B1A5EA6822DD962D001961BB /* HelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1A5EA6722DD962D001961BB /* HelpViewController.swift */; };
 		DC6E7A8F4134DB78CEE3B443 /* Pods_LennonWallHKTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86ED339A73C15D849B84F3CC /* Pods_LennonWallHKTests.framework */; };
 		E95F6D42531DD805C518D3C9 /* Pods_LennonWallHKUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0246568153CADB1D291FA680 /* Pods_LennonWallHKUITests.framework */; };
@@ -89,6 +90,7 @@
 		B19A9FCA22DB92CA002A308E /* DrawViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawViewController.swift; sourceTree = "<group>"; };
 		B19A9FCC22DB94BE002A308E /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		B19A9FCE22DB94F8002A308E /* Pencil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pencil.swift; sourceTree = "<group>"; };
+		B19FAF3122EC9AC80097B755 /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		B1A5EA6722DD962D001961BB /* HelpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpViewController.swift; sourceTree = "<group>"; };
 		C20BA25B34349ADE023E7AB2 /* Pods-LennonWallHKTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LennonWallHKTests.release.xcconfig"; path = "Target Support Files/Pods-LennonWallHKTests/Pods-LennonWallHKTests.release.xcconfig"; sourceTree = "<group>"; };
 		F0C6580985F856007CEADCE7 /* Pods-LennonWallHKUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LennonWallHKUITests.release.xcconfig"; path = "Target Support Files/Pods-LennonWallHKUITests/Pods-LennonWallHKUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -166,6 +168,7 @@
 				57FD13B0202CED9500C2AF98 /* Plane.swift */,
 				5752760C202DF2E4003F7F6A /* GridMaterial.swift */,
 				57FD1384202CD1E400C2AF98 /* Main.storyboard */,
+				B19FAF3122EC9AC80097B755 /* AboutViewController.swift */,
 				B17B995A22E84140008923A9 /* ARSettingViewController.swift */,
 				B1A5EA6722DD962D001961BB /* HelpViewController.swift */,
 				57FD1387202CD1E600C2AF98 /* Assets.xcassets */,
@@ -432,6 +435,7 @@
 			files = (
 				B19A9FCB22DB92CA002A308E /* DrawViewController.swift in Sources */,
 				5752760D202DF2E4003F7F6A /* GridMaterial.swift in Sources */,
+				B19FAF3222EC9AC80097B755 /* AboutViewController.swift in Sources */,
 				B19A9FCF22DB94F8002A308E /* Pencil.swift in Sources */,
 				B19A9FCD22DB94BE002A308E /* SettingsViewController.swift in Sources */,
 				B1A5EA6822DD962D001961BB /* HelpViewController.swift in Sources */,
