@@ -26,6 +26,7 @@
 		B19A9FCF22DB94F8002A308E /* Pencil.swift in Sources */ = {isa = PBXBuildFile; fileRef = B19A9FCE22DB94F8002A308E /* Pencil.swift */; };
 		B19FAF3222EC9AC80097B755 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B19FAF3122EC9AC80097B755 /* AboutViewController.swift */; };
 		B1A5EA6822DD962D001961BB /* HelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1A5EA6722DD962D001961BB /* HelpViewController.swift */; };
+		B1D1B7BB23163616004C785B /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = B1D1B7BA23163616004C785B /* .gitignore */; };
 		DC6E7A8F4134DB78CEE3B443 /* Pods_LennonWallHKTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86ED339A73C15D849B84F3CC /* Pods_LennonWallHKTests.framework */; };
 		E95F6D42531DD805C518D3C9 /* Pods_LennonWallHKUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0246568153CADB1D291FA680 /* Pods_LennonWallHKUITests.framework */; };
 /* End PBXBuildFile section */
@@ -92,6 +93,7 @@
 		B19A9FCE22DB94F8002A308E /* Pencil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pencil.swift; sourceTree = "<group>"; };
 		B19FAF3122EC9AC80097B755 /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		B1A5EA6722DD962D001961BB /* HelpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpViewController.swift; sourceTree = "<group>"; };
+		B1D1B7BA23163616004C785B /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		C20BA25B34349ADE023E7AB2 /* Pods-LennonWallHKTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LennonWallHKTests.release.xcconfig"; path = "Target Support Files/Pods-LennonWallHKTests/Pods-LennonWallHKTests.release.xcconfig"; sourceTree = "<group>"; };
 		F0C6580985F856007CEADCE7 /* Pods-LennonWallHKUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LennonWallHKUITests.release.xcconfig"; path = "Target Support Files/Pods-LennonWallHKUITests/Pods-LennonWallHKUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -138,6 +140,7 @@
 		57FD1372202CD1E400C2AF98 = {
 			isa = PBXGroup;
 			children = (
+				B1D1B7BA23163616004C785B /* .gitignore */,
 				B119B20222DB01AD005CE28C /* ARVideoKit.framework */,
 				57FD137D202CD1E400C2AF98 /* ARPlaneDetector */,
 				57FD1394202CD1E600C2AF98 /* ARPlaneDetectorTests */,
@@ -320,6 +323,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B1D1B7BB23163616004C785B /* .gitignore in Resources */,
 				57FD1388202CD1E600C2AF98 /* Assets.xcassets in Resources */,
 				B1773C2D22DCE0BC00A8EC4E /* Launch Screen.storyboard in Resources */,
 				57FD1386202CD1E400C2AF98 /* Main.storyboard in Resources */,
